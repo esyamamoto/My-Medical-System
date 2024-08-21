@@ -1,3 +1,4 @@
+// src/context/AuthContext.tsx
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface AuthProviderProps {

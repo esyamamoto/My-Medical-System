@@ -1,9 +1,10 @@
-import React from 'react';
+// src/App.test.tsx
+
 import { render, screen } from '@testing-library/react';
+
 import App from './App';
 
-test('renders learn react link', () => {
+it('should show "Vite + React" text', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+  expect(screen.getByText(/vite \+ react/i)).toBeInTheDocument();
+})

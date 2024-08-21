@@ -9,13 +9,13 @@ interface AuthGuardProps {
 }
 
 const AuthGuard: React.FC<AuthGuardProps> = ({ allowedRoles, children }) => {
-  const { isAuthenticated, role } = useAuth();
+  const { isAuthenticated, userRole } = useAuth();
 
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
 
-  if (!allowedRoles.includes(role)) {
+  if (!allowedRoles.includes(userRole)) {
     return <Navigate to="/unauthorized" />;
   }
 
