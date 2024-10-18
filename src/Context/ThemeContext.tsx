@@ -1,0 +1,1 @@
+// Contexto para gerenciamento de tema (dark/light mode)

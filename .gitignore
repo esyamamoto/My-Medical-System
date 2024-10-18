@@ -1,0 +1,11 @@
+# Ignorar arquivos de configuração do VS Code
+.vscode/
+
+# Ignorar dependências do Node.js
+node_modules/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de build
+dist/

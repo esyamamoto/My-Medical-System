@@ -1,0 +1,181 @@
+1. Tela de Login
+⚠️ Observações:
+
+📁 Para os testes passarem, o componente deve ser chamado de Login.tsx ou Login/index.tsx.
+🔗 A rota usada para essa tela deve ser /.
+2. Crie todos os elementos que devem respeitar os atributos descritos no protótipo para a tela de login
+<details> <summary><strong>Observações técnicas</strong></summary>
+O input de e-mail deve ter o atributo data-testid="email-input".
+O input de senha deve ter o atributo data-testid="password-input".
+O botão de login deve ter o atributo data-testid="login-submit-btn".
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+Se estão corretos os data-testids email-input, password-input e login-submit-btn.
+</details><br />
+3. Desenvolva a tela de maneira que a pessoa consiga escrever seu e-mail no input de email e sua senha no input de senha
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+A possibilidade de escrever o e-mail no input de e-mail.
+A possibilidade de escrever a senha no input de senha.
+</details><br />
+4. Desenvolva a tela de maneira que o formulário só seja válido após o preenchimento de um e-mail válido e de uma senha com mais de 6 caracteres
+Este requisito também inclui testes de cobertura da página Login.tsx.
+
+<br /><details>
+
+<summary><strong>Observações técnicas</strong></summary>
+O formulário só fica válido após um e-mail válido e uma senha com mais de 6 caracteres serem preenchidos.
+Caso o formulário esteja inválido, o botão de submeter deve estar desativado, contendo a propriedade disabled.
+Caso o formulário esteja válido, o botão de submeter deve estar ativado, não contendo a propriedade disabled.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O botão deve estar desativado se o e-mail for inválido.
+O botão deve estar desativado se a senha tiver 6 caracteres ou menos.
+O botão deve estar ativado se o e-mail e a senha forem válidos.
+Deve haver cobertura de 45% da tela de login.
+</details><br />
+5. Autenticação de Usuário (JWT)
+1. Crie um serviço authService.ts para lidar com a autenticação
+<details> <summary><strong>Observações técnicas</strong></summary>
+O serviço deve conter métodos para login e verificação do token.
+O método de login deve enviar as credenciais para a API e receber o token JWT.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O serviço deve retornar o token JWT após a autenticação bem-sucedida.
+</details><br />
+2. Implemente a lógica de autenticação no componente Login.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+O componente deve chamar o serviço de autenticação e salvar o token no localStorage.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O token deve ser salvo no localStorage após a autenticação.
+</details><br />
+6. Proteção de Rotas (AuthGuard)
+1. Crie um componente AuthGuard.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+O componente deve verificar se o token JWT está presente no localStorage.
+Se o token não estiver presente, redirecionar para a tela de login.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+A proteção de rotas deve funcionar corretamente, redirecionando usuários não autenticados para a tela de login.
+</details><br />
+7. Dashboard Principal
+1. Crie o componente Dashboard.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+O componente deve exibir estatísticas como número de pacientes e consultas agendadas.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+As estatísticas devem ser exibidas corretamente na tela do dashboard.
+</details><br />
+8. CRUD de Pacientes
+1. Crie o componente Patients.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+O componente deve listar todos os pacientes cadastrados.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+Os pacientes devem ser exibidos corretamente na lista.
+</details><br />
+2. Crie os componentes CreatePatient.tsx e EditPatient.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+CreatePatient.tsx deve conter um formulário para adicionar um novo paciente.
+EditPatient.tsx deve permitir editar as informações de um paciente existente.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O formulário de criação deve permitir adicionar um novo paciente corretamente.
+O formulário de edição deve permitir atualizar as informações do paciente.
+</details><br />
+3. Crie o arquivo de estilo Patients.css
+<details> <summary><strong>Observações técnicas</strong></summary>
+O arquivo deve conter estilos para o componente de pacientes.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+Os estilos devem ser aplicados corretamente aos componentes de pacientes.
+</details><br />
+9. CRUD de Médicos (Restrito a Administradores)
+1. Crie o componente Doctors.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+O componente deve listar todos os médicos cadastrados.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+Os médicos devem ser exibidos corretamente na lista.
+</details><br />
+2. Crie os componentes CreateDoctor.tsx e EditDoctor.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+CreateDoctor.tsx deve conter um formulário para adicionar um novo médico.
+EditDoctor.tsx deve permitir editar as informações de um médico existente.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O formulário de criação deve permitir adicionar um novo médico corretamente.
+O formulário de edição deve permitir atualizar as informações do médico.
+</details><br />
+3. Crie o arquivo de estilo Doctors.css
+<details> <summary><strong>Observações técnicas</strong></summary>
+O arquivo deve conter estilos para o componente de médicos.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+Os estilos devem ser aplicados corretamente aos componentes de médicos.
+</details><br />
+10. Gestão de Consultas
+1. Crie o componente Appointments.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+O componente deve listar todas as consultas agendadas.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+As consultas devem ser exibidas corretamente na lista.
+</details><br />
+2. Crie os componentes CreateAppointment.tsx e EditAppointment.tsx
+<details> <summary><strong>Observações técnicas</strong></summary>
+CreateAppointment.tsx deve conter um formulário para adicionar uma nova consulta.
+EditAppointment.tsx deve permitir editar as informações de uma consulta existente.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O formulário de criação deve permitir adicionar uma nova consulta corretamente.
+O formulário de edição deve permitir atualizar as informações da consulta.
+</details><br />
+3. Crie o arquivo de estilo Appointments.css
+<details> <summary><strong>Observações técnicas</strong></summary>
+O arquivo deve conter estilos para o componente de consultas.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+Os estilos devem ser aplicados corretamente aos componentes de consultas.
+</details><br />
+11. Implementar o PrimeReact
+1. Configure o uso do PrimeReact
+<details> <summary><strong>Observações técnicas</strong></summary>
+O PrimeReact deve ser instalado e configurado corretamente no projeto.
+</details>
+<br /><details>
+
+<summary><strong>O que será verificado</strong></summary>
+O PrimeReact
